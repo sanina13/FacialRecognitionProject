@@ -1,0 +1,3 @@
+Identificar pessoas conhecidas numa webcam em tempo real
+Prototipo Reconhecimento de quem é...
+Neste momento o objetivo começa por imagens
