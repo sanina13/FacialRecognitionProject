@@ -8,7 +8,7 @@ mp_drawing = mp.solutions.drawing_utils
 #Video from webcam (0 = webcam)
 cap = cv2.VideoCapture(1)
 
-with mp_face_detection(model_selection = 0, min_detection_confidence = 0.5) as face_detection:
+with mp_face_detection.FaceDetection(model_selection = 0, min_detection_confidence = 0.5) as face_detection:
     while cap.isOpened():
         success, frame = cap.read()
         if not success:
