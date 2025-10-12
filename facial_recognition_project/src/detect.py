@@ -11,16 +11,17 @@ def main():
     cap = cv2.VideoCapture(1)
 
     if not cap.isOpened():
-        print('Erro ao abrir webcam.')
+        raise ValueError("Erro ao abrir webcam.")
 
     with mp_face_detection.FaceDetection(model_selection = 0, min_detection_confidence = 0.5) as face_detection:
+        
         print('Webcam iniciada. Pressionar ESC para sair.')
+
         while cap.isOpened():
             success, frame = cap.read()
             if not success:
-                print('Erro ao ler o frame da câmera')
-                break
-
+                raise ValueError('Erro ao ler o frame da câmera')
+            
 
             # Convert from OpenCV to MediaPipe
             rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
