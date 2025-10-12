@@ -8,13 +8,13 @@ mp_drawing = mp.solutions.drawing_utils
 #Video from webcam (0 = webcam)
 
 def main():
-    cap = cv2.VideoCapture(1)
+    cap = cv2.VideoCapture(0)
 
     if not cap.isOpened():
         raise ValueError("Erro ao abrir webcam.")
 
     with mp_face_detection.FaceDetection(model_selection = 0, min_detection_confidence = 0.5) as face_detection:
-        
+
         print('Webcam iniciada. Pressionar ESC para sair.')
 
         while cap.isOpened():
